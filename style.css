@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   scrollbar-width: none;
+   scroll-behavior: smooth;
+   font-family: 'Open Sans', sans-serif;
+}
+
+html {
+   background: #303030;
+}
+
+body {
+   min-height: 100svh;
+   width: 100vw;
+   background: white;
+}
+
+section#gather {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 10px;
+   gap: 10px;
+}
+
+section#gather p {
+   font-size: 25px;
+   font-weight: 500;
+}
+
+section#gather div.list {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   overflow-y: scroll;
+   width: 100%;
+}
+
+section#gather div.list div.airline {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   width: 100%;
+   overflow: hidden;
+   height: 100px;
+   background: #dcdcdc;
+   padding: 5px;
+   border-radius: 15px;
+}
+
+section#gather div.list div.airline img {
+   height: 30px;
+}
+
+section#desktop {
+   display: none;
+}
+
+@media screen and (min-width: 768px) {
+   body {
+      height: 100vh;
+      width: 100vw;
+   }
+
+   section#desktop {
+      background: linear-gradient(to bottom, black, #440099);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 100%;
+      width: 100%;
+      color: white;
+      text-align: center;
+      z-index: 100;
+   }
+
+   section#desktop p.notice {
+      font-size: 35px;
+      font-weight: 600;
+   }
+
+   section#desktop img {
+      width: 35vh;
+      height: 35vh;
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0px 0px -3px 10px black;
+   }
+
+   section#desktop p.instructions {
+      font-size: 15px;
+   }
+}
