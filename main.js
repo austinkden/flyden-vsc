@@ -5,8 +5,13 @@ startButton.addEventListener("click", () => {
    setTimeout(() => {
       document.querySelector("section.welcome").classList.add("leaving");
       setTimeout(() => {
-         document.querySelector("section.welcome p.intro").remove();
-      document.querySelector("section.welcome").classList.add("btn");
+         document.querySelector("section.welcome").remove();
+         setTimeout(() => {
+            document.querySelector("section.airline").classList.remove("gone");
+            setTimeout(() => {
+               document.querySelector("section.airline").classList.remove("hidden");
+            }, 25);
+         }, 25);
       }, 400);
-   }, 100);
+   }, 400);
 });
