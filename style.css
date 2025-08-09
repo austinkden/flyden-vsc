@@ -13,12 +13,14 @@
 html {
    background: black;
    font-size: 15px;
+   overflow: hidden;
 }
 
 body {
    background: linear-gradient(to bottom right, white, #440099);
    height: 100svh;
    width: 100vw;
+   overflow: hidden;
 }
 
 section.welcome {
@@ -28,10 +30,11 @@ section.welcome {
    justify-content: center;
    height: 100%;
    width: 100%;
+   overflow: hidden;
 }
 
 section.welcome p.intro {
-   font-size: 3rem;
+   font-size: 3.25rem;
    font-weight: 900;
    text-align: center;
    max-width: 90vw;
