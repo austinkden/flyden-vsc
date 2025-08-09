@@ -140,6 +140,7 @@ section.airline div.list {
    flex-direction: column;
    gap: 5px;
    overflow-y: scroll;
+   border-radius: 1.25rem;
 }
 
 section.airline div.list div.airline {
