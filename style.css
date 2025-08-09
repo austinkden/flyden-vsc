@@ -9,3 +9,15 @@
    scroll-behavior: smooth;
    font-family: 'Open Sans', sans-serif;
 }
+
+html {
+   background: black;
+   height: 100lvh;
+   width: 100vw;
+}
+
+body {
+   background: linear-gradient(to bottom right, white, #440099);
+   height: 100svh;
+   width: 100vw;
+}
