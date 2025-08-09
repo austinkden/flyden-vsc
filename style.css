@@ -8,6 +8,7 @@
    scrollbar-width: none;
    scroll-behavior: smooth;
    font-family: 'DM Sans', sans-serif;
+   user-select: none;
 }
 
 html, body {
@@ -112,7 +113,7 @@ section.airline p.ask {
 section.airline input.search {
    background: rgba(0, 0, 0, 0.25);
    width: calc(100% - 30px);
-   color: white;
+   color: black;
    padding: 0.75rem;
    border: none;
    border-radius: 1.25rem;
@@ -120,7 +121,7 @@ section.airline input.search {
 }
 
 section.airline input.search::placeholder {
-   color: white;
+   color: black;
    opacity: 0.75;
 }
 
@@ -130,6 +131,7 @@ section.airline div.list-contain {
    display: flex;
    flex-direction: column;
    align-items: center;
+   overflow: hidden;
 }
 
 section.airline div.list {
@@ -147,7 +149,14 @@ section.airline div.list div.airline {
    text-align: center;
    padding: 0.75rem;
    border-radius: 1.25rem;
-   transition: background 0.2s ease;
+   transition: background 0.3s ease, border 0.3s ease;
+   border: 2px solid transparent;
+}
+
+section.airline div.list div.airline.selected {
+   background: #8859ff;
+   color: black;
+   border: 2px solid black;
 }
 
 section.airline button.submit {
