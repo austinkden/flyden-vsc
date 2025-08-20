@@ -20,7 +20,7 @@ html, body {
 }
 
 body {
-   background: linear-gradient(to bottom right, white, #440099);
+   background: linear-gradient(to bottom right, #9e75d1, #440099);
    min-height: 100svh;
    min-width: 100vw;
 }
