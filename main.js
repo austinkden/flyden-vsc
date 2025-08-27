@@ -57,3 +57,8 @@ airlineSearch.addEventListener("input", () => {
       }
    }, 2);
 });
+
+window.addEventListener("popstate", (event) => {
+   event.preventDefault();
+   document.body.style.background = "red";
+});
