@@ -50,6 +50,10 @@ section.welcome p.intro span.brand {
    color: transparent;
 }
 
+section.welcome p.intro span.den {
+   font-weight: 1000;
+}
+
 section.welcome button.start {
    width: calc(100% - 30px);
    color: white;

@@ -1,3 +1,4 @@
+history.pushState(null, document.title, location.href);
 const startButton = document.querySelector("section.welcome button.start");
 
 startButton.addEventListener("click", () => {
@@ -60,5 +61,6 @@ airlineSearch.addEventListener("input", () => {
 
 window.addEventListener("popstate", (event) => {
    event.preventDefault();
+   history.pushState(null, document.title, location.href);
    document.body.style.background = "red";
 });
