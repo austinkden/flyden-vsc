@@ -122,7 +122,17 @@ window.addEventListener("popstate", (event) => {
          }, 25);
       }, 375);
    } else if (currentPage == 2) {
-
+      currentPage = 1;
+      document.querySelector("section.bags").classList.add("hidden");
+      setTimeout(() => {
+         document.querySelector("section.bags").classList.add("gone");
+         setTimeout(() => {
+            document.querySelector("section.airline").classList.remove("gone");
+            setTimeout(() => {
+               document.querySelector("section.airline").classList.remove("hidden");
+            }, 25);
+         }, 25);
+      }, 375);
    } else {
       window.close();
    }
