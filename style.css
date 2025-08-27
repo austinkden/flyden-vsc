@@ -35,7 +35,7 @@ section.welcome {
 }
 
 section.welcome p.intro {
-   font-size: 3.25rem;
+   font-size: 3rem;
    font-weight: 600;
    text-align: center;
    max-width: calc(100% - 30px);
@@ -67,10 +67,6 @@ section.welcome button.start {
    background: linear-gradient(to right, #440099, #993355);
 }
 
-section.welcome button.start.moving {
-   animation: gradient-move 0.75s linear infinite;
-}
-
 @keyframes gradient-move {
    0% {
       background-position: 0% 0%;
@@ -78,11 +74,6 @@ section.welcome button.start.moving {
    100% {
       background-position: 200% 0%;
    }
-}
-
-section.welcome.leaving {
-   transition: opacity 0.4s ease;
-   opacity: 0;
 }
 
 section.airline {
@@ -93,16 +84,7 @@ section.airline {
    height: 100%;
    width: 100%;
    gap: 10px;
-   transition: opacity 0.4s ease;
    opacity: 1;
-}
-
-section.airline.hidden {
-   opacity: 0;
-}
-
-section.airline.gone {
-   display: none;
 }
 
 section.airline p.ask {
@@ -152,7 +134,7 @@ section.airline div.list {
    border-radius: 1.25rem;
 }
 
-section.airline div.list div.airline {
+section.airline div.list div.option {
    background: rgba(0, 0, 0, 0.75);
    color: white;
    font-size: 1.5rem;
@@ -163,11 +145,11 @@ section.airline div.list div.airline {
    border: 2px solid transparent;
 }
 
-section.airline div.list div.airline.hidden {
+section.airline div.list div.option.hidden {
    display: none;
 }
 
-section.airline div.list div.airline.selected {
+section.airline div.list div.option.selected {
    background: #8859ff;
    color: black;
    border: 2px solid black;
@@ -191,4 +173,106 @@ section.airline button.next {
 
 section.airline button.next.allowed {
    background-position: 95%;
+}
+
+section.bags {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+   gap: 10px;
+   opacity: 1;
+}
+
+section.bags p.ask {
+   font-size: 1.75rem;
+   font-weight: 500;
+   text-align: center;
+   max-width: calc(100% - 30px);
+   line-height: 0.95;
+   margin-top: 15px;
+}
+
+section.bags div.list-contain {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow: hidden;
+}
+
+section.bags div.list {
+   width: calc(100% - 30px);
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   overflow-y: scroll;
+   border-radius: 1.25rem;
+}
+
+section.bags div.list div.option {
+   background: rgba(0, 0, 0, 0.75);
+   color: white;
+   font-size: 1.5rem;
+   text-align: center;
+   padding: 0.75rem;
+   border-radius: 1.25rem;
+   transition: background 0.4s ease, border 0.4s ease;
+   border: 2px solid transparent;
+}
+
+section.bags div.list div.option.hidden {
+   display: none;
+}
+
+section.bags div.list div.option.selected {
+   background: #8859ff;
+   color: black;
+   border: 2px solid black;
+}
+
+section.bags button.next {
+   width: calc(100% - 30px);
+   color: white;
+   padding: 0.75rem;
+   border: none;
+   border-radius: 1.5rem;
+   font-size: 1.75rem;
+   font-weight: 400;
+   text-align: center;
+   margin-bottom: 15px;
+   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 40%, #440099 50%, #993355);
+   background-size: 250% 250%;
+   background-position: 0%;
+   transition: background-position 0.6s ease;
+}
+
+section.bags button.next.allowed {
+   background-position: 95%;
+}
+
+section.security {
+   padding: 10px;
+   font-size: 20px;
+}
+
+section.security p {
+   max-width: 90%;
+}
+
+.hidden {
+   opacity: 0 !important;
+   pointer-events: none;
+   user-select: none;
+}
+
+.hidden-trans {
+   transition: opacity 0.4s ease !important;
+}
+
+.gone {
+   display: none !important;
 }
