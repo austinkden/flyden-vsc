@@ -6,9 +6,10 @@ let gate = "Unknown Gate";
 history.pushState(null, document.title, location.href);
 let currentPage = 0;
 const startButton = document.querySelector("section.welcome button.start");
-
 startButton.addEventListener("click", () => {
    currentPage = 1;
+   document.querySelector("div.background-gradient").classList.remove("shown");
+   document.body.classList.add("shown");
    document.querySelector("section.welcome").classList.add("hidden");
    setTimeout(() => {
       document.querySelector("section.welcome").classList.add("gone");

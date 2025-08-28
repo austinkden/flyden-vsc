@@ -20,9 +20,27 @@ html, body {
 }
 
 body {
-   background: linear-gradient(to bottom, #993355, #dfc9fc 30% 70%, #440099);
+   background: transparent;
    min-height: 100svh;
    min-width: 100vw;
+   background: #dfc9fc;
+}
+
+div.background-gradient {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100svh;
+   width: 100vw;
+   background: linear-gradient(to bottom, #993355, transparent 30% 70%, #440099);
+   opacity: 0;
+   transition: opacity 0.6s ease;
+   pointer-events: none;
+   z-index: 300;
+}
+
+div.background-gradient.shown {
+   opacity: 1;
 }
 
 section.welcome {
@@ -32,6 +50,7 @@ section.welcome {
    justify-content: center;
    height: 100%;
    width: 100%;
+   z-index: 400
 }
 
 div.intro {
@@ -83,7 +102,7 @@ section.welcome button.start {
    font-size: 1.75rem;
    font-weight: 400;
    text-align: center;
-   background: linear-gradient(to right, #440099, #993355);
+   background: #440099;
 }
 
 @keyframes gradient-move {
@@ -95,7 +114,7 @@ section.welcome button.start {
    }
 }
 
-section.airline {
+section.airline, section.bags, section.security {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -106,7 +125,7 @@ section.airline {
    opacity: 1;
 }
 
-section.airline p.ask {
+section p.ask {
    font-size: 1.75rem;
    font-weight: 500;
    text-align: center;
@@ -115,10 +134,10 @@ section.airline p.ask {
    margin-top: 15px;
 }
 
-section.airline input.search {
-   background: rgba(0, 0, 0, 0.05);
+section input.search {
+   background: rgba(0, 0, 0, 0.5);
    width: calc(100% - 30px);
-   color: black;
+   color: white;
    padding: 0.75rem;
    border: 2px solid rgba(0, 0, 0, 0.5);
    border-radius: 1.25rem;
@@ -126,16 +145,16 @@ section.airline input.search {
    transition: border 0.4s ease;
 }
 
-section.airline input.search::placeholder {
-   color: #440099;
+section input.search::placeholder {
+   color: #dfc9fc;
    opacity: 0.8;
 }
 
-section.airline input.search:focus {
+section input.search:focus {
    border: 2px solid black;
 }
 
-section.airline div.list-contain {
+section div.list-contain {
    width: 100%;
    height: 100%;
    display: flex;
@@ -144,37 +163,36 @@ section.airline div.list-contain {
    overflow: hidden;
 }
 
-section.airline div.list {
+section div.list {
    width: calc(100% - 30px);
    display: flex;
    flex-direction: column;
    gap: 5px;
    overflow-y: scroll;
-   border-radius: 1.25rem;
 }
 
-section.airline div.list div.option {
-   background: rgba(0, 0, 0, 0.75);
-   color: white;
+section div.list div.option {
    font-size: 1.5rem;
    text-align: center;
    padding: 0.75rem;
    border-radius: 1.25rem;
    transition: background 0.4s ease, border 0.4s ease;
-   border: 2px solid transparent;
-}
-
-section.airline div.list div.option.hidden {
-   display: none;
-}
-
-section.airline div.list div.option.selected {
-   background: #8859ff;
+   background: #dfc9fc;
    color: black;
    border: 2px solid black;
 }
 
-section.airline button.next {
+section div.list div.option.hidden {
+   display: none;
+}
+
+section div.list div.option.selected {
+   background: rgba(0, 0, 0, 0.75);
+   color: white;
+   border: 2px solid transparent;
+}
+
+section button.next {
    width: calc(100% - 30px);
    color: white;
    padding: 0.75rem;
@@ -184,92 +202,13 @@ section.airline button.next {
    font-weight: 400;
    text-align: center;
    margin-bottom: 15px;
-   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 40%, #440099 50%, #993355);
+   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 40%, #440099 50%);
    background-size: 250% 250%;
    background-position: 0%;
    transition: background-position 0.6s ease;
 }
 
-section.airline button.next.allowed {
-   background-position: 95%;
-}
-
-section.bags {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   height: 100%;
-   width: 100%;
-   gap: 10px;
-   opacity: 1;
-}
-
-section.bags p.ask {
-   font-size: 1.75rem;
-   font-weight: 500;
-   text-align: center;
-   max-width: calc(100% - 30px);
-   line-height: 1.05;
-   margin-top: 15px;
-}
-
-section.bags div.list-contain {
-   width: 100%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   overflow: hidden;
-}
-
-section.bags div.list {
-   width: calc(100% - 30px);
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
-   overflow-y: scroll;
-   border-radius: 1.25rem;
-}
-
-section.bags div.list div.option {
-   background: rgba(0, 0, 0, 0.75);
-   color: white;
-   font-size: 1.5rem;
-   text-align: center;
-   padding: 0.75rem;
-   border-radius: 1.25rem;
-   transition: background 0.4s ease, border 0.4s ease;
-   border: 2px solid transparent;
-}
-
-section.bags div.list div.option.hidden {
-   display: none;
-}
-
-section.bags div.list div.option.selected {
-   background: #8859ff;
-   color: black;
-   border: 2px solid black;
-}
-
-section.bags button.next {
-   width: calc(100% - 30px);
-   color: white;
-   padding: 0.75rem;
-   border: none;
-   border-radius: 1.5rem;
-   font-size: 1.75rem;
-   font-weight: 400;
-   text-align: center;
-   margin-bottom: 15px;
-   background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 40%, #440099 50%, #993355);
-   background-size: 250% 250%;
-   background-position: 0%;
-   transition: background-position 0.6s ease;
-}
-
-section.bags button.next.allowed {
+section button.next.allowed {
    background-position: 95%;
 }
 
