@@ -27,7 +27,7 @@ const airlineListItems = document.querySelectorAll("section.airline div.list div
 airlineListItems.forEach(airline => {
    airline.addEventListener("click", () => {
       if (airline.classList.contains("selected")) {
-         document.querySelector("section.airline button.next").classList.remove("allowed");
+         document.querySelector("section.airline div.buttons button.next").classList.remove("allowed");
          airline.classList.remove("selected");
       } else {
          document.querySelectorAll("section.airline div.list div.option").forEach(airline => {
@@ -35,7 +35,7 @@ airlineListItems.forEach(airline => {
          });
 
          airline.classList.add("selected");
-         document.querySelector("section.airline button.next").classList.add("allowed");
+         document.querySelector("section.airline div.buttons button.next").classList.add("allowed");
       }
    });
 });
@@ -53,7 +53,7 @@ airlineSearch.addEventListener("input", () => {
 });
 
 
-const airlineNextButton = document.querySelector("section.airline button.next");
+const airlineNextButton = document.querySelector("section.airline div.buttons button.next");
 
 airlineNextButton.addEventListener("click", () => {
    currentPage = 2;
@@ -75,7 +75,7 @@ const bagsListItems = document.querySelectorAll("section.bags div.list div.optio
 bagsListItems.forEach(opt => {
    opt.addEventListener("click", () => {
       if (opt.classList.contains("selected")) {
-         document.querySelector("section.bags button.next").classList.remove("allowed");
+         document.querySelector("section.bags div.buttons button.next").classList.remove("allowed");
          opt.classList.remove("selected");
       } else {
          document.querySelectorAll("section.bags div.list div.option").forEach(opt => {
@@ -83,12 +83,12 @@ bagsListItems.forEach(opt => {
          });
 
          opt.classList.add("selected");
-         document.querySelector("section.bags button.next").classList.add("allowed");
+         document.querySelector("section.bags div.buttons button.next").classList.add("allowed");
       }
    });
 });
 
-const bagsNextButton = document.querySelector("section.bags button.next");
+const bagsNextButton = document.querySelector("section.bags div.buttons button.next");
 
 bagsNextButton.addEventListener("click", () => {
    currentPage = 3;
