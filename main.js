@@ -35,6 +35,7 @@ airlineListItems.forEach(airline => {
          });
 
          airline.classList.add("selected");
+         console.log(document.querySelector("section.airline div.buttons button.next"));
          document.querySelector("section.airline div.buttons button.next").classList.add("allowed");
       }
    });
@@ -51,7 +52,6 @@ airlineSearch.addEventListener("input", () => {
       }
    });
 });
-
 
 const airlineNextButton = document.querySelector("section.airline div.buttons button.next");
 
