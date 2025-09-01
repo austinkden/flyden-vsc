@@ -19,7 +19,7 @@ startButton.addEventListener("click", () => {
             document.querySelector("section.airline").classList.remove("hidden");
          }, 25);
       }, 25);
-   }, 375);
+   }, 275);
 })
 
 const airlineListItems = document.querySelectorAll("section.airline div.list div.option");
@@ -67,7 +67,7 @@ airlineNextButton.addEventListener("click", () => {
             document.querySelector("section.bags").classList.remove("hidden");
          }, 25);
       }, 25);
-   }, 375);
+   }, 275);
 });
 
 const bagsListItems = document.querySelectorAll("section.bags div.list div.option");
@@ -102,7 +102,7 @@ bagsNextButton.addEventListener("click", () => {
             document.querySelector("section.security").classList.remove("hidden");
          }, 25);
       }, 25);
-   }, 375);
+   }, 275);
 });
 
 window.addEventListener("popstate", (event) => {
@@ -121,7 +121,7 @@ window.addEventListener("popstate", (event) => {
                document.querySelector("section.welcome").classList.remove("hidden");
             }, 25);
          }, 25);
-      }, 375);
+      }, 275);
    } else if (currentPage == 2) {
       currentPage = 1;
       document.querySelector("section.bags").classList.add("hidden");
@@ -133,7 +133,7 @@ window.addEventListener("popstate", (event) => {
                document.querySelector("section.airline").classList.remove("hidden");
             }, 25);
          }, 25);
-      }, 375);
+      }, 275);
    } else {
       window.close();
    }

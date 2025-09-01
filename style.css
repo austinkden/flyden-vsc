@@ -142,7 +142,7 @@ section input.search {
    border: 2px solid rgba(0, 0, 0, 0.5);
    border-radius: 1.25rem;
    font-size: 1.25rem;
-   transition: border 0.4s ease;
+   transition: border 0.3s ease;
 }
 
 section input.search::placeholder {
@@ -176,7 +176,7 @@ section div.list div.option {
    text-align: center;
    padding: 0.75rem;
    border-radius: 1.25rem;
-   transition: background 0.4s ease, border 0.4s ease;
+   transition: background 0.3s ease, border 0.3s ease;
    background: #dfc9fc;
    color: black;
    border: 2px solid black;
@@ -270,7 +270,7 @@ section.security p {
 }
 
 .hidden-trans {
-   transition: opacity 0.4s ease !important;
+   transition: opacity 0.3s ease !important;
 }
 
 .gone {
